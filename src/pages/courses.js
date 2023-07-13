@@ -69,6 +69,7 @@ export const CourseList = (props) => (
             }
             medium={
                 <Datagrid>
+                    <TextField source="index" />
                     <TextField source="shortname" />
                     <TextField source="name" />
                     <TextField source="difficulty" />
@@ -90,6 +91,7 @@ export const CourseEdit = (props) => (
         <TabbedForm toolbar={<CourseEditToolbar />}>
             <FormTab label="Course Information">
                 <DisabledInput source="_id" />
+                <NumberInput source="index" validate={required()}/>
                 <TextInput source="name" validate={required()}/>
                 <TextInput source="shortname" validate={required()}/>
                 <NumberInput source="difficulty" validate={required()}/>
@@ -124,6 +126,7 @@ export const CourseCreate = (props) => (
     <Create {...props}>
         <TabbedForm toolbar={<CourseCreateToolbar />}>
             <FormTab label="Course Information">
+                <NumberInput source="index" validate={required()}/>
                 <TextInput source="name" validate={required()} />
                 <TextInput source="shortname" validate={required()} />
                 <NumberInput source="difficulty" validate={required()} />
