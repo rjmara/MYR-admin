@@ -12,6 +12,7 @@ import {
     TextField,
     EditButton,
     DisabledInput,
+    DeleteWithConfirmButton,
     LongTextInput,
     TextInput,
     NumberInput,
@@ -76,6 +77,10 @@ export const CourseList = (props) => (
                     <TextField source="description" />
                     <TextField label="Lessons" source="lessons.length" />
                     <EditButton />
+                    <DeleteWithConfirmButton
+                        confirmContent="You will not be able to recover this record. Are you sure?"
+                        translateOptions={record => record.name}
+                    />
                 </Datagrid>
             }
         />
